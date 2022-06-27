@@ -1,6 +1,12 @@
 ### A Pluto.jl notebook ###
 # v0.19.8
 
+#> [frontmatter]
+#> title = "Basic machine learning with MLJ in Julia"
+#> date = "2022-06-27"
+#> tags = ["julia", "machine learning", "data science"]
+#> description = "Learn how to use MLJ to do fast and basic machine learning workflows in Julia"
+
 using Markdown
 using InteractiveUtils
 
@@ -17,7 +23,7 @@ end
 
 # ╔═╡ 2a7b416c-ec9a-11ec-320e-25bc6e0c415d
 md"""
-# Machine Learning routinws with `MLJ`
+# Basic Machine Learning with `MLJ`
 """
 
 # ╔═╡ 06734be6-a1d0-4782-93ac-1ea7f8070575
@@ -176,8 +182,20 @@ This is evaluating the model (not the machine!) given the data. If we want to me
 # ╔═╡ efd56eec-b108-4267-ba92-5e03a200dbdb
 yhat = predict(mach, X[test, :])
 
+# ╔═╡ 65e87cf4-5ccc-4524-80ce-66157ec40037
+md"""
+And then calculate another metric given both $\hat{y}$ and $y$. All metrics in `MLJ` work like this:
+
+$$metric(\hat{y}, y)$$
+"""
+
 # ╔═╡ b548717a-aaf7-4e3b-a370-bc4c4be8cfd9
 mean(brier_loss(yhat, y[test]))
+
+# ╔═╡ 2b34111e-6487-4422-b592-8e8ff0086d46
+md"""
+which is the average Brier loss of our prediction vector.
+"""
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1113,6 +1131,8 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╠═d004334c-24e0-4c29-a530-0ec3d6c21f42
 # ╟─f0137fac-29af-453c-aab7-b1511808f1fd
 # ╠═efd56eec-b108-4267-ba92-5e03a200dbdb
+# ╟─65e87cf4-5ccc-4524-80ce-66157ec40037
 # ╠═b548717a-aaf7-4e3b-a370-bc4c4be8cfd9
+# ╟─2b34111e-6487-4422-b592-8e8ff0086d46
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
