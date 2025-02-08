@@ -2,3 +2,5 @@ it3708grading/*
 *.mp4
 *.webm
 *-checkpoint.ipynb
+.vscode/
+Manifest.toml
